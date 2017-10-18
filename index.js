@@ -45,8 +45,10 @@ function viewCart() {
 
 function total() {
   var x = 0
-  for (const [key, value] of Object.entries(cart)) {
-    x += value;
+  for (let i = 0; i < cart.length; i++) {
+    for (let item in cart[i]) {
+      x += cart[i][item];
+    }
   }
   return x;
 }
